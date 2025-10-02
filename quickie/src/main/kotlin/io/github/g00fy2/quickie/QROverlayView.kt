@@ -145,7 +145,6 @@ internal class QROverlayView @JvmOverloads constructor(
   fun setCustomButtonIcon(drawableRes: Int?) {
     if (drawableRes == null) {
 //      binding.titleTextView.setCompoundDrawables(null, null, null, null)
-      binding.historyImageView.setImageResource(R.drawable.ic_history_white)
     } else if (drawableRes != 0) {
       try {
 //        ResourcesCompat.getDrawable(resources, drawableRes, null)?.limitDrawableSize()?.let {

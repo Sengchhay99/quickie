@@ -51,7 +51,6 @@
         android:layout_margin="12dp"
         android:background="@drawable/quickie_bg_round"
         android:paddingHorizontal="12dp"
-        app:srcCompat="@drawable/ic_history_white"
         tools:visibility="visible"
         />
 

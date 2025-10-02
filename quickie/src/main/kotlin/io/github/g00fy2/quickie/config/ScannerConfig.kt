@@ -20,6 +20,7 @@ public class ScannerConfig(
   internal val customRes: Int?,
 ) {
 
+  @Suppress("TooManyFunctions")
   public class Builder {
     private var barcodeFormats: List<BarcodeFormat> = listOf(BarcodeFormat.FORMAT_ALL_FORMATS)
     private var overlayStringRes: Int = 0

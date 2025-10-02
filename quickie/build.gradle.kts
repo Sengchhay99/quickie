@@ -69,22 +69,22 @@ afterEvaluate {
     enabled = name.endsWith("DebugUnitTest")
   }
 
-  publishing {
-    publications {
-      create<MavenPublication>("bundledRelease") { commonConfig("bundled") }
-      create<MavenPublication>("unbundledRelease") { commonConfig("unbundled") }
-    }
-    repositories {
-      maven {
-        name = "sonatype"
-        url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-        credentials {
-          username = findStringProperty("sonatypeUsername")
-          password = findStringProperty("sonatypePassword")
-        }
-      }
-    }
-  }
+//  publishing {
+//    publications {
+//      create<MavenPublication>("bundledRelease") { commonConfig("bundled") }
+//      create<MavenPublication>("unbundledRelease") { commonConfig("unbundled") }
+//    }
+//    repositories {
+//      maven {
+//        name = "sonatype"
+//        url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+//        credentials {
+//          username = findStringProperty("sonatypeUsername")
+//          password = findStringProperty("sonatypePassword")
+//        }
+//      }
+//    }
+//  }
 }
 
 //signing {
