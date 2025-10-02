@@ -27,4 +27,6 @@ public sealed class QRResult {
    * @property exception the cause why the Activity was finished.
    */
   public data class QRError(val exception: Exception) : QRResult()
+
+  public data object CustomButton : QRResult()
 }

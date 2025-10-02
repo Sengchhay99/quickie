@@ -10,6 +10,7 @@ import io.github.g00fy2.quickie.QRResult.QRMissingPermission
 import io.github.g00fy2.quickie.QRResult.QRSuccess
 import io.github.g00fy2.quickie.QRResult.QRUserCanceled
 import io.github.g00fy2.quickie.QRScannerActivity.Companion.EXTRA_CONFIG
+import io.github.g00fy2.quickie.QRScannerActivity.Companion.RESULT_CUSTOM_BUTTON
 import io.github.g00fy2.quickie.QRScannerActivity.Companion.RESULT_ERROR
 import io.github.g00fy2.quickie.QRScannerActivity.Companion.RESULT_MISSING_PERMISSION
 import io.github.g00fy2.quickie.config.ScannerConfig
@@ -31,6 +32,7 @@ public class ScanCustomCode : ActivityResultContract<ScannerConfig, QRResult>() 
       RESULT_CANCELED -> QRUserCanceled
       RESULT_MISSING_PERMISSION -> QRMissingPermission
       RESULT_ERROR -> QRError(intent.getRootException())
+      RESULT_CUSTOM_BUTTON -> QRResult.CustomButton
       else -> QRError(IllegalStateException("Unknown activity result code $resultCode"))
     }
   }

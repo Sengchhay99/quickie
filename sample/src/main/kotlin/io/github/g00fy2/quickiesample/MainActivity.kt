@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
           setHorizontalFrameRatio(2.2f) // set the horizontal overlay ratio (default is 1 / square frame)
           setUseFrontCamera(false) // use the front camera
           setKeepScreenOn(true) // keep the device's screen turned on
+          setCustomDrawableRes(R.drawable.ic_launcher_foreground)
         }
       )
     }
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity() {
       QRUserCanceled -> "User canceled"
       QRMissingPermission -> "Missing permission"
       is QRError -> "${result.exception.javaClass.simpleName}: ${result.exception.localizedMessage}"
+      QRResult.CustomButton -> "Custom"
     }
 
     Snackbar.make(binding.root, text, Snackbar.LENGTH_INDEFINITE).apply {

@@ -66,6 +66,10 @@ internal class QRScannerActivity : AppCompatActivity() {
     binding = QuickieScannerActivityBinding.inflate(appThemeLayoutInflater)
     setContentView(binding.root)
 
+    binding.overlayView.setCustomButtonOnClick {
+      setResult(RESULT_CUSTOM_BUTTON, null)
+    }
+
     setupEdgeToEdgeUI()
     applyScannerConfig()
 
@@ -192,6 +196,8 @@ internal class QRScannerActivity : AppCompatActivity() {
       binding.overlayView.setCustomText(it.stringRes)
       binding.overlayView.setCustomIcon(it.drawableRes)
       binding.overlayView.setHorizontalFrameRatio(it.horizontalFrameRatio)
+      binding.overlayView.setCustomButtonIcon(it.customRes)
+
       hapticFeedback = it.hapticFeedback
       showTorchToggle = it.showTorchToggle
       useFrontCamera = it.useFrontCamera
@@ -218,5 +224,6 @@ internal class QRScannerActivity : AppCompatActivity() {
     const val EXTRA_RESULT_EXCEPTION = "quickie-exception"
     const val RESULT_MISSING_PERMISSION = RESULT_FIRST_USER + 1
     const val RESULT_ERROR = RESULT_FIRST_USER + 2
+    const val RESULT_CUSTOM_BUTTON = 999
   }
 }

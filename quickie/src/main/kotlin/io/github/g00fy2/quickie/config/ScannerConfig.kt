@@ -17,6 +17,7 @@ public class ScannerConfig(
   internal val useFrontCamera: Boolean,
   internal val showCloseButton: Boolean,
   internal val keepScreenOn: Boolean,
+  internal val customRes: Int?,
 ) {
 
   public class Builder {
@@ -29,6 +30,7 @@ public class ScannerConfig(
     private var useFrontCamera: Boolean = false
     private var showCloseButton: Boolean = false
     private var keepScreenOn: Boolean = false
+    private var customDrawableRes: Int? = 0
 
     /**
      * Set a list of interested barcode formats. List must not be empty.
@@ -79,6 +81,13 @@ public class ScannerConfig(
     public fun setKeepScreenOn(enable: Boolean): Builder = apply { keepScreenOn = enable }
 
     /**
+     * Set a drawable resource used for the custom button.
+     * If null is passed, no icon will be shown.
+     */
+    public fun setCustomDrawableRes(@DrawableRes drawableRes: Int?): Builder =
+      apply { customDrawableRes = drawableRes }
+
+    /**
      * Build the BarcodeConfig required by the ScanBarcode ActivityResultContract.
      */
     public fun build(): ScannerConfig =
@@ -92,6 +101,7 @@ public class ScannerConfig(
         useFrontCamera = useFrontCamera,
         showCloseButton = showCloseButton,
         keepScreenOn = keepScreenOn,
+        customRes = customDrawableRes
       )
   }
 

@@ -132,8 +132,30 @@ internal class QROverlayView @JvmOverloads constructor(
     if (visible) binding.torchImageView.setTintAndStateAwareBackground()
   }
 
+  fun setCustomButtonOnClick(action: () -> Unit) {
+    binding.historyImageView.setOnClickListener {
+      action()
+    }
+  }
+
   fun setTorchState(on: Boolean) {
     binding.torchImageView.isSelected = on
+  }
+
+  fun setCustomButtonIcon(drawableRes: Int?) {
+    if (drawableRes == null) {
+//      binding.titleTextView.setCompoundDrawables(null, null, null, null)
+      binding.historyImageView.setImageResource(R.drawable.ic_history_white)
+    } else if (drawableRes != 0) {
+      try {
+//        ResourcesCompat.getDrawable(resources, drawableRes, null)?.limitDrawableSize()?.let {
+//          binding.titleTextView.setCompoundDrawables(null, it, null, null)
+//        }
+        binding.historyImageView.setImageResource(drawableRes)
+      } catch (ignore: NotFoundException) {
+        // drawable resource not found
+      }
+    }
   }
 
   private fun calculateFrameAndTitlePos() {
