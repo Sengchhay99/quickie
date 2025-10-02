@@ -69,11 +69,11 @@ afterEvaluate {
     enabled = name.endsWith("DebugUnitTest")
   }
 
-//  publishing {
-//    publications {
-//      create<MavenPublication>("bundledRelease") { commonConfig("bundled") }
-//      create<MavenPublication>("unbundledRelease") { commonConfig("unbundled") }
-//    }
+  publishing {
+    publications {
+      create<MavenPublication>("bundledRelease") { commonConfig("bundled") }
+      create<MavenPublication>("unbundledRelease") { commonConfig("unbundled") }
+    }
 //    repositories {
 //      maven {
 //        name = "sonatype"
@@ -84,7 +84,7 @@ afterEvaluate {
 //        }
 //      }
 //    }
-//  }
+  }
 }
 
 //signing {
