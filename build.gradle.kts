@@ -19,7 +19,7 @@ subprojects {
     compilerOptions {
       allWarningsAsErrors = true
       progressiveMode = true
-      jvmTarget = JvmTarget.JVM_11
+      jvmTarget = JvmTarget.JVM_17
       if (this@subprojects.name != "sample") {
         freeCompilerArgs.add("-Xexplicit-api=strict")
       }
@@ -35,8 +35,8 @@ subprojects {
         targetSdk = libs.versions.androidconfig.targetSdk.get().toInt()
       }
       compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
       }
     }
   }
